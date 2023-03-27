@@ -7,16 +7,23 @@ import YearBar from '../../components/yearBar/YearBar';
 const Fourth = () => {
   return (
     <Container
-      maxWidth='sm'
+      maxWidth='md'
       style={{
         backgroundColor: 'lightgreen',
         height: '90vh',
         marginTop: '5vh',
         marginBottom: '5vh',
         borderRadius: '20px',
+        paddingTop: '10px',
       }}
     >
-      <div>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '20px',
+        }}
+      >
         <YearBar />
         <InputArea />
         <GoalDetails />
