@@ -70,6 +70,7 @@ const InputArea = ({
               <label>Your "Whys": </label>
               <input
                 onChange={handleChangeWhy}
+                value={why}
                 type='text'
                 placeholder='Write your "why"'
               />
@@ -78,6 +79,7 @@ const InputArea = ({
               <label>Action Plans: </label>
               <input
                 onChange={handleChangeAction}
+                value={action}
                 type='text'
                 placeholder='Write required action'
               />

@@ -49,11 +49,15 @@ const GoalDetails = ({
               I need to acheive this goal becuase
             </h4>
             <ul>
-              <li>aaa</li>
-              <li>aaa</li>
-              <li>aaa</li>
-              <li>aaa</li>
-              <li>aaa</li>
+              <div>
+                {whyList.map((item, index) => {
+                  return (
+                    <div key={index}>
+                      <li>{item}</li>
+                    </div>
+                  );
+                })}
+              </div>
             </ul>
           </CardContent>
         </Card>
