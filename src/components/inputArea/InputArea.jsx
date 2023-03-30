@@ -1,16 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 
-const InputArea = () => {
-  const [goal, setGoal] = useState('');
-  const [why, setWhy] = useState('');
-  const [action, setAction] = useState('');
-
-  const [goalList, setGoalList] = useState('');
-  const [whyList, setWhyList] = useState([]);
-  const [actionList, setActionList] = useState([]);
-
+const InputArea = ({
+  goal,
+  why,
+  action,
+  setGoal,
+  setWhy,
+  setAction,
+  goalForYear,
+  whyList,
+  actionList,
+  setGoalForYear,
+  setWhyList,
+  setActionList,
+}) => {
   const handleChangeGoal = (e) => {
     setGoal(e.target.value);
   };
@@ -18,14 +23,15 @@ const InputArea = () => {
   const handleChangeWhy = (e) => {
     setWhy(e.target.value);
   };
+
   const handleChangeAction = (e) => {
     setAction(e.target.value);
   };
-  const handleClick = () => {
+
+  const handleClick = (e) => {
+    e.preventDefault();
     if (goal.length > 0) {
-      setGoalList((currentValue) => {
-        return currentValue;
-      });
+      setGoalForYear(goal);
       setGoal('');
     }
 
@@ -56,6 +62,7 @@ const InputArea = () => {
               <label>Goal: </label>
               <input
                 onChange={handleChangeGoal}
+                value={goal}
                 type='text'
                 placeholder='Write your goal'
               />

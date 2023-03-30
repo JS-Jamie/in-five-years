@@ -2,7 +2,20 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 
-const GoalDetails = () => {
+const GoalDetails = ({
+  goal,
+  why,
+  action,
+  setGoal,
+  setWhy,
+  setAction,
+  goalForYear,
+  whyList,
+  actionList,
+  setGoalForYear,
+  setWhyList,
+  setActionList,
+}) => {
   const currentYear = () => {
     return new Date().getFullYear();
   };
@@ -24,10 +37,7 @@ const GoalDetails = () => {
             <h4 style={{ marginTop: '6px', marginBottom: '3px' }}>
               My Goal for {currentYear()}
             </h4>
-            <p>
-              goal details here goal details here goal details here goal details
-              here goal details here goal details here
-            </p>
+            <div>{goalForYear}</div>
             <button>edit</button> <button>delete</button>
           </CardContent>
         </Card>
