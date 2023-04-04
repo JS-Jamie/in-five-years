@@ -36,6 +36,7 @@ const InputArea = ({
     }
 
     if (why.length > 0) {
+      e.preventDefault();
       setWhyList((currentValue) => {
         return [...currentValue, why];
       });
@@ -43,11 +44,16 @@ const InputArea = ({
     }
 
     if (action.length > 0) {
+      e.preventDefault();
       setActionList((currentValue) => {
         return [...currentValue, action];
       });
       setAction('');
     }
+  };
+
+  const handleAddWhy = (e) => {
+    e.preventDefault();
   };
 
   return (
@@ -74,7 +80,7 @@ const InputArea = ({
                 type='text'
                 placeholder='Write your "why"'
               />
-              <button>+</button>
+              <button onClick={handleAddWhy}>+</button>
               <br />
               <label>Action Plans: </label>
               <input

@@ -24,6 +24,7 @@ const GoalDetails = ({
     <div style={{ display: 'flex', flexDirection: 'row', gap: '8px' }}>
       <div
         style={{
+          width: '100%',
           display: 'flex',
           flexDirection: 'column',
           gap: '8px',
@@ -62,18 +63,30 @@ const GoalDetails = ({
           </CardContent>
         </Card>
       </div>
-      <div>
+      <div
+        style={{
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '8px',
+          maxWidth: '50%',
+        }}
+      >
         <Card
-          style={{ madWidth: '50%', maxHeight: '54.1vh', minHeight: '54.1vh' }}
+          style={{ width: '100%', maxHeight: '54.1vh', minHeight: '54.1vh' }}
         >
           <CardContent style={{ paddingTop: '0', paddingBottom: '0' }}>
             <h4>Action Plans - todo list style</h4>
             <ul>
-              <li>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</li>
-              <li>aaa</li>
-              <li>aaa</li>
-              <li>aaa</li>
-              <li>aaa</li>
+              <div>
+                {actionList.map((item, index) => {
+                  return (
+                    <div key={index}>
+                      <li>{item}</li>
+                    </div>
+                  );
+                })}
+              </div>
             </ul>
           </CardContent>
         </Card>

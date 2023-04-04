@@ -17,6 +17,7 @@ const First = () => {
     <Container
       maxWidth='md'
       style={{
+        width: '100%',
         backgroundColor: 'lightgreen',
         height: '90vh',
         marginTop: '5vh',
