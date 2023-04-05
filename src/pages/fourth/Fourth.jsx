@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from '@material-ui/core';
 import InputArea from '../../components/inputArea/InputArea';
 import GoalDetails from '../../components/goalDetails/GoalDetails';
 import YearBar from '../../components/yearBar/YearBar';
 
 const Fourth = () => {
+  const [goal, setGoal] = useState('');
+  const [why, setWhy] = useState('');
+  const [action, setAction] = useState('');
+
+  const [goalForYear, setGoalForYear] = useState('');
+  const [whyList, setWhyList] = useState([]);
+  const [actionList, setActionList] = useState([]);
+
   return (
     <Container
       maxWidth='md'
@@ -25,8 +33,34 @@ const Fourth = () => {
         }}
       >
         <YearBar />
-        <InputArea />
-        <GoalDetails />
+        <InputArea
+          goal={goal}
+          why={why}
+          action={action}
+          setGoal={setGoal}
+          setWhy={setWhy}
+          setAction={setAction}
+          goalForYear={goalForYear}
+          whyList={whyList}
+          actionList={actionList}
+          setGoalForYear={setGoalForYear}
+          setWhyList={setWhyList}
+          setActionList={setActionList}
+        />
+        <GoalDetails
+          goal={goal}
+          why={why}
+          action={action}
+          setGoal={setGoal}
+          setWhy={setWhy}
+          setAction={setAction}
+          goalForYear={goalForYear}
+          whyList={whyList}
+          actionList={actionList}
+          setGoalForYear={setGoalForYear}
+          setWhyList={setWhyList}
+          setActionList={setActionList}
+        />
       </div>
     </Container>
   );
